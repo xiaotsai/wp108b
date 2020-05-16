@@ -1,19 +1,21 @@
 function isPrime(n)
-{
-  for(i = 2; i < n; i++)
+{  
+  for(var i = 2;  i < n/2; i++)
   {
-    if (n % i == 0)
-    return false;
+    if (n % i == 0) return false;  
   }
+  
   return true;
 }
 
+let e = process.argv[2];
+let c = process.argv[3];
 
-
-z = 0;
-for(j = 3; j <= 7; j++)
+var z = 0;
+for(j = e; j <= c; j++)
 {
   if (isPrime(j))
   z+=1;
 }
-console.log('isPrime(3, 7) =', z);
+
+console.log('isPrime','(' + e  + ','+ c + ')' + '=' , z);
